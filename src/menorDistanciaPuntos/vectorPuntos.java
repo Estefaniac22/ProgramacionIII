@@ -34,22 +34,24 @@ public class vectorPuntos {
         int punto1 = 0;
         int punto2 = 1;
 
-        double distaciaMin = misPuntos.get(punto1).pitagoras(misPuntos.get(punto2));
+        double distanciaMin = misPuntos.get(0).pitagoras(misPuntos.get(1));
 
-        for (int i = 1; i < misPuntos.size() - 2; i++) {
-            for (int j = i + 1; j < misPuntos.size() - 1; j++) {
+        for (int i = 0; i < misPuntos.size(); i++) {
+            for (int j = 0 + 1; j < misPuntos.size(); j++) {
                 if (i != j) {
                     double distancia = misPuntos.get(i).pitagoras(misPuntos.get(j));
-                    if (distancia < distaciaMin) {
+                    if (distancia < distanciaMin) {
                         punto1 = i;
                         punto2 = j;
-                        distaciaMin = distancia;
+                        distanciaMin = distancia;
                     }
+          //          System.out.println("distancia Minima---" + distanciaMin);
+          //          System.out.println("distancia---" + distancia);
                 }
             }
         }
 
-        System.out.println("La menor distancia es: " + distaciaMin + " entre los puntos " + punto1 + " y " + punto2);
+        System.out.println("La menor distancia es: " + distanciaMin + " entre los puntos " + punto1 + " y " + punto2);
 
     }
 }
